@@ -1,0 +1,152 @@
+# Bhopal-oises-
+Your trust is our strength 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhopal Oasis - Pure Water Delivery</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- Razorpay -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+body{overflow-x:hidden;color:white;line-height:1.6;}
+a{text-decoration:none;}
+header, footer{z-index:10;position:sticky;top:0;}
+/* Waterfall Video Background */
+.video-bg{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:0.8;}
+
+/* Glass 3D Effect */
+.glass{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;padding:40px;margin:20px auto;max-width:900px;box-shadow:0 8px 32px rgba(0,0,0,0.3);transform:perspective(1000px) rotateX(5deg);transition:0.4s;}
+.glass:hover{transform:perspective(1000px) rotateX(0deg) scale(1.03);}
+
+/* Header */
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:rgba(0,0,0,0.3);}
+header h1{font-weight:700;}
+nav a{margin-left:20px;color:white;font-weight:500;}
+
+/* Hero Section */
+.hero{height:90vh;display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;padding:20px;}
+.hero h2{font-size:42px;margin-bottom:20px;}
+.btn{display:inline-block;padding:12px 25px;margin:10px;background:white;color:#0077b6;border-radius:30px;font-weight:600;transition:0.3s;}
+.btn:hover{background:#023e8a;color:white;}
+
+/* Sections */
+section{padding:80px 10%;text-align:center;}
+
+/* Sticky WhatsApp */
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;font-weight:bold;box-shadow:0 5px 15px rgba(0,0,0,0.3);z-index:9;}
+
+/* Footer */
+footer{text-align:center;padding:20px;background:rgba(0,0,0,0.2);}
+
+/* Order Form */
+form input, form select, form textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:none;}
+form button{background:#0077b6;color:white;padding:12px 20px;border:none;border-radius:30px;cursor:pointer;font-weight:600;}
+form button:hover{background:#023e8a;}
+
+/* Smooth Scroll */
+html{scroll-behavior:smooth;}
+</style>
+</head>
+<body>
+
+<!-- Video Background -->
+<video autoplay muted loop class="video-bg">
+<source src="https://cdn.pixabay.com/vimeo/460401011/Waterfall-13738.mp4" type="video/mp4">
+</video>
+
+<header>
+<h1>Bhopal Oasis</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#order">Order</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="glass">
+<h2>Pure & Safe Drinking Water Delivered in Bhopal</h2>
+<p>RO + UV Purified 20L Water Cans at Your Doorstep</p>
+<a href="tel:+919300663888" class="btn">📞 Call Now</a>
+<a href="https://wa.me/919300663888" class="btn">💬 WhatsApp Order</a>
+</div>
+</section>
+
+<section id="products">
+<div class="glass">
+<h2>Our Products</h2>
+<p><strong>Daily 20 Litre Water Can:</strong> ₹40 per can</p>
+<p><strong>Monthly Plan (20 Cans):</strong> ₹1000</p>
+</div>
+</section>
+
+<section id="order">
+<div class="glass">
+<h2>Order Now</h2>
+<form id="orderForm">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<input type="text" name="address" placeholder="Delivery Address" required>
+<select name="plan" required>
+<option value="">Select Plan</option>
+<option value="daily">Daily - ₹40/can</option>
+<option value="monthly">Monthly - ₹1000</option>
+</select>
+<button type="submit">Pay & Place Order</button>
+</form>
+</div>
+</section>
+
+<section id="contact">
+<div class="glass">
+<h2>Contact Us</h2>
+<p>📍 Serving All Areas of Bhopal</p>
+<p>📞 93006 63888</p>
+<p>📧 akramkhan0334z</p>
+</div>
+</section>
+
+<a href="https://wa.me/919300663888" class="whatsapp">Order on WhatsApp</a>
+
+<footer>
+© 2026 Bhopal Oasis | Pure Water Delivery Service
+</footer>
+
+<script>
+// Razorpay Payment Integration
+document.getElementById('orderForm').addEventListener('submit', function(e){
+e.preventDefault();
+var form = e.target;
+var name = form.name.value;
+var phone = form.phone.value;
+var address = form.address.value;
+var plan = form.plan.value;
+
+var amount = plan === 'daily' ? 40*100 : 1000*100; // in paise
+
+var options = {
+"key": "YOUR_RAZORPAY_KEY_HERE", 
+"amount": amount,
+"currency": "INR",
+"name": "Bhopal Oasis",
+"description": plan==='daily'?"Daily Water Order":"Monthly Plan",
+"handler": function (response){
+alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+// Send email to admin
+window.location.href = "mailto:akramkhan0334z?subject=New Order&body="+
+encodeURIComponent("Name: "+name+"\nPhone: "+phone+"\nAddress: "+address+"\nPlan: "+plan+"\nPayment ID: "+response.razorpay_payment_id);
+}
+};
+var rzp1 = new Razorpay(options);
+rzp1.open();
+});
+</script>
+
+</body>
+</html>
