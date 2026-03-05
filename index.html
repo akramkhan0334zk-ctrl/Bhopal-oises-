@@ -20,7 +20,7 @@ background:#f4fbff;
 overflow-x:hidden;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero{
 position:relative;
 height:100vh;
@@ -51,57 +51,45 @@ background:rgba(0,0,0,0.4);
 }
 
 .hero h1{
-font-size:50px;
-z-index:2;
+font-size:55px;
 }
 
 .hero p{
-z-index:2;
 margin-top:10px;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .btn{
 margin:10px;
 padding:12px 25px;
 background:#00aaff;
 border:none;
 color:white;
-border-radius:25px;
+border-radius:30px;
 cursor:pointer;
-font-size:16px;
-z-index:2;
 text-decoration:none;
 display:inline-block;
-}
-
-.btn:hover{
-background:#008ecc;
-}
-
-/* SECTION */
-section{
-padding:60px 20px;
-text-align:center;
 }
 
 /* SERVICES */
 .services{
 background:#e6f7ff;
+padding:60px 20px;
+text-align:center;
 }
 
 .card{
 background:white;
-padding:20px;
+padding:25px;
 margin:15px auto;
 max-width:300px;
-border-radius:10px;
+border-radius:12px;
 box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
-/* ORDER FORM */
+/* ORDER BOX */
 .form-box{
-max-width:400px;
+max-width:420px;
 margin:auto;
 background:white;
 padding:25px;
@@ -111,10 +99,39 @@ box-shadow:0 10px 30px rgba(0,0,0,0.1);
 
 input, select{
 width:100%;
-padding:10px;
+padding:12px;
 margin:10px 0;
 border:1px solid #ddd;
 border-radius:8px;
+}
+
+/* FLOATING BUTTONS */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+font-size:18px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:999;
+}
+
+.call-float{
+position:fixed;
+bottom:80px;
+right:20px;
+background:#0077ff;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+font-size:18px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:999;
 }
 
 /* MAP */
@@ -124,7 +141,6 @@ height:400px;
 border:none;
 }
 
-/* FOOTER */
 footer{
 background:#0a4d68;
 color:white;
@@ -147,22 +163,15 @@ text-align:center;
 <p>Your trust is our strength</p>
 
 <a class="btn" href="#order">Order Water</a>
-<a class="btn" href="tel:+919999999999">Call Now</a>
 
-</section>
-
-<!-- ABOUT -->
-<section>
-<h2>About Us</h2>
-<p>We provide pure natural water delivery across Bhopal with fast service and trusted quality.</p>
 </section>
 
 <!-- SERVICES -->
 <section class="services">
 <h2>Our Services</h2>
 <div class="card">Natural Water Supply</div>
-<div class="card">Fast Delivery</div>
-<div class="card">Safe & Pure Water</div>
+<div class="card">Home Delivery</div>
+<div class="card">Bulk Water Supply</div>
 </section>
 
 <!-- ORDER -->
@@ -170,16 +179,16 @@ text-align:center;
 <h2>Order Water</h2>
 
 <div class="form-box">
-<input type="text" placeholder="Your Name">
-<input type="text" placeholder="Address">
-<select>
+<input type="text" id="name" placeholder="Your Name">
+<input type="text" id="address" placeholder="Address">
+
+<select id="product">
 <option>20 Litre Can</option>
 <option>50 Litre Tank</option>
-<option>Custom Order</option>
+<option>Bulk Order</option>
 </select>
 
-<a class="btn" href="https://wa.me/919999999999">Order on WhatsApp</a>
-<a class="btn" href="tel:+919999999999">Call to Order</a>
+<button class="btn" onclick="sendWhatsApp()">Order on WhatsApp</button>
 </div>
 
 </section>
@@ -187,16 +196,30 @@ text-align:center;
 <!-- MAP -->
 <section>
 <h2>Our Location - Bhopal</h2>
-
 <iframe class="map"
 src="https://www.google.com/maps?q=Bhopal&output=embed">
 </iframe>
-
 </section>
 
 <footer>
 © 2026 Bhopal-oises | Pure Water Delivery
 </footer>
+
+<!-- FLOATING BUTTONS -->
+<a class="whatsapp-float" href="https://wa.me/919300663888">WhatsApp</a>
+<a class="call-float" href="tel:+919300663888">Call</a>
+
+<script>
+function sendWhatsApp(){
+let name=document.getElementById("name").value;
+let address=document.getElementById("address").value;
+let product=document.getElementById("product").value;
+
+let message=`Hello, I want to order water.%0AName: ${name}%0AAddress: ${address}%0AProduct: ${product}`;
+
+window.open(`https://wa.me/919300663888?text=${message}`);
+}
+</script>
 
 </body>
 </html>
