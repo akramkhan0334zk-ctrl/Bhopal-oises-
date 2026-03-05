@@ -1,152 +1,202 @@
-# Bhopal-oises-
-Your trust is our strength 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhopal Oasis - Pure Water Delivery</title>
+<title>Bhopal-oises | Your trust is our strength</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-<!-- Razorpay -->
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
-body{overflow-x:hidden;color:white;line-height:1.6;}
-a{text-decoration:none;}
-header, footer{z-index:10;position:sticky;top:0;}
-/* Waterfall Video Background */
-.video-bg{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:0.8;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-/* Glass 3D Effect */
-.glass{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;padding:40px;margin:20px auto;max-width:900px;box-shadow:0 8px 32px rgba(0,0,0,0.3);transform:perspective(1000px) rotateX(5deg);transition:0.4s;}
-.glass:hover{transform:perspective(1000px) rotateX(0deg) scale(1.03);}
+body{
+background:#f4fbff;
+overflow-x:hidden;
+}
 
-/* Header */
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:rgba(0,0,0,0.3);}
-header h1{font-weight:700;}
-nav a{margin-left:20px;color:white;font-weight:500;}
+/* HERO SECTION */
+.hero{
+position:relative;
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+overflow:hidden;
+}
 
-/* Hero Section */
-.hero{height:90vh;display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;padding:20px;}
-.hero h2{font-size:42px;margin-bottom:20px;}
-.btn{display:inline-block;padding:12px 25px;margin:10px;background:white;color:#0077b6;border-radius:30px;font-weight:600;transition:0.3s;}
-.btn:hover{background:#023e8a;color:white;}
+.hero video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+}
 
-/* Sections */
-section{padding:80px 10%;text-align:center;}
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.4);
+}
 
-/* Sticky WhatsApp */
-.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;font-weight:bold;box-shadow:0 5px 15px rgba(0,0,0,0.3);z-index:9;}
+.hero h1{
+font-size:50px;
+z-index:2;
+}
 
-/* Footer */
-footer{text-align:center;padding:20px;background:rgba(0,0,0,0.2);}
+.hero p{
+z-index:2;
+margin-top:10px;
+}
 
-/* Order Form */
-form input, form select, form textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:none;}
-form button{background:#0077b6;color:white;padding:12px 20px;border:none;border-radius:30px;cursor:pointer;font-weight:600;}
-form button:hover{background:#023e8a;}
+/* BUTTONS */
+.btn{
+margin:10px;
+padding:12px 25px;
+background:#00aaff;
+border:none;
+color:white;
+border-radius:25px;
+cursor:pointer;
+font-size:16px;
+z-index:2;
+text-decoration:none;
+display:inline-block;
+}
 
-/* Smooth Scroll */
-html{scroll-behavior:smooth;}
+.btn:hover{
+background:#008ecc;
+}
+
+/* SECTION */
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+/* SERVICES */
+.services{
+background:#e6f7ff;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:15px auto;
+max-width:300px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* ORDER FORM */
+.form-box{
+max-width:400px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+input, select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+/* MAP */
+.map{
+width:100%;
+height:400px;
+border:none;
+}
+
+/* FOOTER */
+footer{
+background:#0a4d68;
+color:white;
+padding:20px;
+text-align:center;
+}
 </style>
 </head>
+
 <body>
 
-<!-- Video Background -->
-<video autoplay muted loop class="video-bg">
-<source src="https://cdn.pixabay.com/vimeo/460401011/Waterfall-13738.mp4" type="video/mp4">
+<!-- HERO -->
+<section class="hero">
+
+<video autoplay muted loop>
+<source src="https://cdn.coverr.co/videos/coverr-waterfall-in-the-forest-6991/1080p.mp4" type="video/mp4">
 </video>
 
-<header>
-<h1>Bhopal Oasis</h1>
-<nav>
-<a href="#home">Home</a>
-<a href="#products">Products</a>
-<a href="#order">Order</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+<h1>Bhopal-oises</h1>
+<p>Your trust is our strength</p>
 
-<section class="hero" id="home">
-<div class="glass">
-<h2>Pure & Safe Drinking Water Delivered in Bhopal</h2>
-<p>RO + UV Purified 20L Water Cans at Your Doorstep</p>
-<a href="tel:+919300663888" class="btn">📞 Call Now</a>
-<a href="https://wa.me/919300663888" class="btn">💬 WhatsApp Order</a>
-</div>
+<a class="btn" href="#order">Order Water</a>
+<a class="btn" href="tel:+919999999999">Call Now</a>
+
 </section>
 
-<section id="products">
-<div class="glass">
-<h2>Our Products</h2>
-<p><strong>Daily 20 Litre Water Can:</strong> ₹40 per can</p>
-<p><strong>Monthly Plan (20 Cans):</strong> ₹1000</p>
-</div>
+<!-- ABOUT -->
+<section>
+<h2>About Us</h2>
+<p>We provide pure natural water delivery across Bhopal with fast service and trusted quality.</p>
 </section>
 
+<!-- SERVICES -->
+<section class="services">
+<h2>Our Services</h2>
+<div class="card">Natural Water Supply</div>
+<div class="card">Fast Delivery</div>
+<div class="card">Safe & Pure Water</div>
+</section>
+
+<!-- ORDER -->
 <section id="order">
-<div class="glass">
-<h2>Order Now</h2>
-<form id="orderForm">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="tel" name="phone" placeholder="Phone Number" required>
-<input type="text" name="address" placeholder="Delivery Address" required>
-<select name="plan" required>
-<option value="">Select Plan</option>
-<option value="daily">Daily - ₹40/can</option>
-<option value="monthly">Monthly - ₹1000</option>
+<h2>Order Water</h2>
+
+<div class="form-box">
+<input type="text" placeholder="Your Name">
+<input type="text" placeholder="Address">
+<select>
+<option>20 Litre Can</option>
+<option>50 Litre Tank</option>
+<option>Custom Order</option>
 </select>
-<button type="submit">Pay & Place Order</button>
-</form>
+
+<a class="btn" href="https://wa.me/919999999999">Order on WhatsApp</a>
+<a class="btn" href="tel:+919999999999">Call to Order</a>
 </div>
+
 </section>
 
-<section id="contact">
-<div class="glass">
-<h2>Contact Us</h2>
-<p>📍 Serving All Areas of Bhopal</p>
-<p>📞 93006 63888</p>
-<p>📧 akramkhan0334z</p>
-</div>
-</section>
+<!-- MAP -->
+<section>
+<h2>Our Location - Bhopal</h2>
 
-<a href="https://wa.me/919300663888" class="whatsapp">Order on WhatsApp</a>
+<iframe class="map"
+src="https://www.google.com/maps?q=Bhopal&output=embed">
+</iframe>
+
+</section>
 
 <footer>
-© 2026 Bhopal Oasis | Pure Water Delivery Service
+© 2026 Bhopal-oises | Pure Water Delivery
 </footer>
-
-<script>
-// Razorpay Payment Integration
-document.getElementById('orderForm').addEventListener('submit', function(e){
-e.preventDefault();
-var form = e.target;
-var name = form.name.value;
-var phone = form.phone.value;
-var address = form.address.value;
-var plan = form.plan.value;
-
-var amount = plan === 'daily' ? 40*100 : 1000*100; // in paise
-
-var options = {
-"key": "YOUR_RAZORPAY_KEY_HERE", 
-"amount": amount,
-"currency": "INR",
-"name": "Bhopal Oasis",
-"description": plan==='daily'?"Daily Water Order":"Monthly Plan",
-"handler": function (response){
-alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
-// Send email to admin
-window.location.href = "mailto:akramkhan0334z?subject=New Order&body="+
-encodeURIComponent("Name: "+name+"\nPhone: "+phone+"\nAddress: "+address+"\nPlan: "+plan+"\nPayment ID: "+response.razorpay_payment_id);
-}
-};
-var rzp1 = new Razorpay(options);
-rzp1.open();
-});
-</script>
 
 </body>
 </html>
